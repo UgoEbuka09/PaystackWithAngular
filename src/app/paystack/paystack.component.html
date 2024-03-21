@@ -1,0 +1,58 @@
+<section>
+  <div>
+    <nav class="p-4">
+      <p>Stells Collections</p>
+      <div>
+        <i class="bi bi-search"></i>
+        <i class="bi bi-cart4"></i>
+      </div>
+    </nav>
+  </div>
+  @if (!show) {
+  <main class="grid mt-5 p-4">
+    @for (item of data; track item.id) {
+    <div>
+      <img class="bagImage" src="{{ item.image }}" alt="bag img" />
+      <p class="mt-3 fw-bold">{{ item.name }}</p>
+      <p class="fs-5">Price: NGN{{ item.price }}</p>
+      <button (click)="getBagDetailById(item.id)" class="fs-5 fw-semibold">
+        See More
+      </button>
+    </div>
+    } @empty { Empty list of users }
+  </main>
+
+  }
+
+  <!-- individual bag detail -->
+  <section>
+    @if (show) {
+    <div class="mt-3 d-flex">
+      @for (item of bagDetail; track item.id) {
+      <img class="indBagImage" src="{{ item.image }}" alt="bag img" />
+      <div class="ms-4 mt-5">
+        <p class="mt-3 fw-bold">{{ item.name }}</p>
+        <div>
+          <button class="d-flex buttn justify-content-between">
+            <i class="bi bi-dash"></i>
+            <p>1</p>
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+        <p class="fs-5 mt-3">Price: NGN{{ item.price }}</p>
+
+        <angular4-paystack
+          [paystackOptions]="options"
+          [class]="'btn btn-primary'"
+          (paymentInit)="paymentInit()"
+          (onClose)="paymentCancel()"
+          (callback)="paymentDone($event)"
+        >
+          Pay with Paystack
+        </angular4-paystack>
+      </div>
+      }
+    </div>
+    }
+  </section>
+</section>

@@ -1,0 +1,31 @@
+section {
+  font-size: 25px;
+}
+nav {
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-between;
+}
+nav i {
+  padding: 10px;
+}
+.grid {
+  border: 1px solid whitesmoke;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 10px;
+}
+.bagImage {
+  width: 100%;
+  height: 60%;
+  object-fit: fill;
+}
+.indBagImage {
+  width: 40%;
+  height: 20%;
+}
+.buttn {
+  width: 8rem;
+  height: 50px;
+}
