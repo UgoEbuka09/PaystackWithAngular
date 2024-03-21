@@ -45,8 +45,8 @@
           [paystackOptions]="options"
           [class]="'btn btn-primary'"
           (paymentInit)="paymentInit()"
-          (onClose)="paymentCancel()"
-          (callback)="paymentDone($event)"
+          (onClose)="paymentFailed()"
+          (callback)="paymentSuccess($event)"
         >
           Pay with Paystack
         </angular4-paystack>

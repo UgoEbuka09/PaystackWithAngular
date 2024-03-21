@@ -11,8 +11,8 @@ export class PaystackComponent {
   bagDetail: any;
   price!: number;
   show: boolean = false;
-  title!: string;
-  reference: string = '';
+  message!: string;
+  reference!: string;
 
   data: BagDetails[] = [
     {
@@ -62,7 +62,7 @@ export class PaystackComponent {
       return item.id === id;
     });
     this.price = this.bagDetail[0].price;
-    this.options.amount = this.price; 
+    this.options.amount = this.price;
     console.log(this.price);
 
     if (this.bagDetail) {
@@ -73,15 +73,15 @@ export class PaystackComponent {
   }
 
   paymentInit() {
-    console.log('Payment initialized');
+    console.log('Payment is Initialized');
   }
 
-  paymentDone(ref: any) {
-    this.title = 'Payment successfull';
-    console.log(this.title, ref);
+  paymentSuccess(ref: any) {
+    this.message = 'Payment is successfull';
+    console.log(this.message, ref);
   }
 
-  paymentCancel() {
-    console.log('payment failed');
+  paymentFailed() {
+    console.log('Payment Failed');
   }
 }
