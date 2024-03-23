@@ -11,9 +11,7 @@ import { Angular4PaystackModule } from 'angular4-paystack';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Angular4PaystackModule.forRoot(
-      'pk_test_cb46b3de39ac84cc025aea974fd4878509e77409'
-    ),
+    Angular4PaystackModule.forRoot('Enter_your_public_key_here'),
   ],
   providers: [],
   bootstrap: [AppComponent],

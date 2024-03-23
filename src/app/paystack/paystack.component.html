@@ -13,9 +13,9 @@
     @for (item of data; track item.id) {
     <div>
       <img class="bagImage" src="{{ item.image }}" alt="bag img" />
-      <p class="mt-3 fw-bold">{{ item.name }}</p>
-      <p class="fs-5">Price: NGN{{ item.price }}</p>
-      <button (click)="getBagDetailById(item.id)" class="fs-5 fw-semibold">
+      <p class="mt-3 fw-bold fs-3">{{ item.name }}</p>
+      <p class="fs-4">Price: NGN{{ item.price }}</p>
+      <button (click)="getBagDetailById(item.id)" class="fs-5 fw-semibold p-1">
         See More
       </button>
     </div>
@@ -31,7 +31,7 @@
       @for (item of bagDetail; track item.id) {
       <img class="indBagImage" src="{{ item.image }}" alt="bag img" />
       <div class="ms-4 mt-5">
-        <p class="mt-3 fw-bold">{{ item.name }}</p>
+        <p class="mt-3 fw-bold fs-3">{{ item.name }}</p>
         <div>
           <button class="d-flex buttn justify-content-between">
             <i class="bi bi-dash"></i>
@@ -39,11 +39,11 @@
             <i class="bi bi-plus"></i>
           </button>
         </div>
-        <p class="fs-5 mt-3">Price: NGN{{ item.price }}</p>
+        <p class="fs-4 mt-3">Price: NGN{{ item.price }}</p>
 
         <angular4-paystack
           [paystackOptions]="options"
-          [class]="'btn btn-primary'"
+          [class]="'btn btn-primary p-3 fs-4'"
           (paymentInit)="paymentInit()"
           (onClose)="paymentFailed()"
           (callback)="paymentSuccess($event)"

@@ -43,7 +43,7 @@ export class PaystackComponent {
 
   options: PaystackOptions = {
     amount: 0,
-    email: 'ugochukwuebuka09@gmail.com',
+    email: 'Enter the email of your Paystack account here',
     ref: `${Math.ceil(Math.random() * 10e10)}`,
     channels: ['USSD', 'bank', 'card'],
     quantity: 1,
